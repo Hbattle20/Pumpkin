@@ -20,7 +20,7 @@ Jamieson Does Pumpkins - A porch pumpkin business website with a seasonal luxury
 1. **Homepage with Hero Section** - Seasonal luxury branding for pumpkin business
 2. **Packages Section** - 4 pricing tiers (Package #1, #2, #3, #4) with pricing included
 3. **Photo Gallery** - Showcase pumpkin displays
-4. **Booking/Contact** - Email link to habttle20@gmail.com
+4. **Booking/Contact** - Email link to hbattle20@gmail.com
 
 ## Design Guidelines
 - **Theme**: Seasonal with mild luxury feel

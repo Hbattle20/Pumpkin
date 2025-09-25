@@ -93,10 +93,10 @@ export default function Home() {
             Pumpkins Worth Falling For
           </p>
           <a
-            href="mailto:habttle20@gmail.com"
+            href="mailto:hbattle20@gmail.com"
             className="inline-block bg-white text-autumn-red px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cream transition-colors duration-300"
           >
-            Email Us: habttle20@gmail.com
+            Email Us: hbattle20@gmail.com
           </a>
         </div>
       </section>
