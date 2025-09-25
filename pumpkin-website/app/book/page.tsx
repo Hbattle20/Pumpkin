@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const packages = [
   { id: "pkg1", name: "Package #1", price: 1500 },
@@ -26,6 +26,7 @@ const removalOptions = [
 
 export default function BookingPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [selectedPackage, setSelectedPackage] = useState("");
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
   const [selectedRemoval, setSelectedRemoval] = useState("");
@@ -64,15 +65,21 @@ export default function BookingPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // This is where Stripe checkout would be integrated
-    alert("Booking form submitted! Stripe integration coming soon.");
-    console.log({
-      package: selectedPackage,
-      addOns: selectedAddOns,
+
+    // Get package name
+    const packageName = packages.find(p => p.id === selectedPackage)?.name || "";
+
+    // Build query params for checkout page
+    const params = new URLSearchParams({
+      amount: calculateTotal().toString(),
+      package: packageName,
+      customer: JSON.stringify(customerInfo),
+      addons: JSON.stringify(selectedAddOns),
       removal: selectedRemoval,
-      customer: customerInfo,
-      total: calculateTotal(),
     });
+
+    // Navigate to checkout page with Stripe
+    router.push(`/book/checkout?${params.toString()}`);
   };
 
   return (
