@@ -1,5 +1,6 @@
 import Gallery from "./components/Gallery";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -53,11 +54,11 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { name: "Package #1", price: "$1500", features: ["2 Grand Prize Pumpkins", "10 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "16 Specialty Pumpkins", "Mini Orange Pumpkins", "Mini White Pumpkins", "3 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
-              { name: "Package #2", price: "$850", features: ["8 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "14 Specialty Pumpkins", "2 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
-              { name: "Package #3 (DIY)", price: "$550", features: ["6 Large Jack O'Lanterns", "6 Medium Jack O'Lanterns", "6 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "8 Specialty Pumpkins", "2 Hay Bales", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
-              { name: "Package #4 (DIY)", price: "$350", features: ["4 Large Jack O'Lanterns", "4 Medium Jack O'Lanterns", "4 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "6 Specialty Pumpkins", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
-              { name: "Custom Package", price: "Contact Us", features: ["Choose Your Own Pumpkins", "Select Quantity & Types", "Add Specialty Items", "Include Hay Bales", "Add Corn Stalks", "Choose Gourds & Decorations", "Design Service Available", "Tailored to Your Budget", "Perfect for Any Display Size"], custom: true },
+              { id: "pkg1", name: "Package #1", price: "$1500", features: ["2 Grand Prize Pumpkins", "10 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "16 Specialty Pumpkins", "Mini Orange Pumpkins", "Mini White Pumpkins", "3 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
+              { id: "pkg2", name: "Package #2", price: "$850", features: ["8 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "14 Specialty Pumpkins", "2 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
+              { id: "pkg3", name: "Package #3 (DIY)", price: "$550", features: ["6 Large Jack O'Lanterns", "6 Medium Jack O'Lanterns", "6 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "8 Specialty Pumpkins", "2 Hay Bales", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
+              { id: "pkg4", name: "Package #4 (DIY)", price: "$350", features: ["4 Large Jack O'Lanterns", "4 Medium Jack O'Lanterns", "4 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "6 Specialty Pumpkins", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
+              { id: "custom", name: "Custom Package", price: "Contact Us", features: ["Choose Your Own Pumpkins", "Select Quantity & Types", "Add Specialty Items", "Include Hay Bales", "Add Corn Stalks", "Choose Gourds & Decorations", "Design Service Available", "Tailored to Your Budget", "Perfect for Any Display Size"], custom: true },
             ].map((pkg, index) => (
               <div
                 key={index}
@@ -73,12 +74,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
+                <Link
+                  href={`/book?package=${pkg.id}`}
                   className="block text-center bg-autumn-orange text-white px-4 py-2 rounded hover:bg-autumn-red transition-colors duration-300"
                 >
                   Book Now
-                </a>
+                </Link>
               </div>
             ))}
           </div>
