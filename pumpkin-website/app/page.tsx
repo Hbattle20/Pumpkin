@@ -19,7 +19,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-autumn-red mb-4">
-                Pumpkins By Jamieson
+                Pumpkins By Jamie
               </h1>
               <p className="text-xl md:text-2xl text-foreground/80">
                 Elegant porch displays for the autumn season
@@ -93,17 +93,17 @@ export default function Home() {
             Pumpkins Worth Falling For
           </p>
           <a
-            href="mailto:habttle20@gmail.com"
+            href="mailto:jamie@pumpkinsbyjamie.com"
             className="inline-block bg-white text-autumn-red px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cream transition-colors duration-300"
           >
-            Email Us: habttle20@gmail.com
+            Email Us: jamie@pumpkinsbyjamie.com
           </a>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="py-8 text-center text-foreground/60 border-t border-autumn-orange/20">
-        <p>&copy; 2024 Pumpkins By Jamieson. All rights reserved.</p>
+        <p>&copy; 2024 Pumpkins By Jamie. All rights reserved.</p>
       </footer>
     </div>
   );

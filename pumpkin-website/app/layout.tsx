@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pumpkins By Jamieson",
+  title: "Pumpkins By Jamie",
   description: "Elegant porch displays for the autumn season",
 };
 
