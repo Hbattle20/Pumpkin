@@ -30,7 +30,7 @@ export default function CheckoutForm({ amount, onSuccess }: CheckoutFormProps) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/book/success`,
+        return_url: `${window.location.origin}/book/success?amount=${amount}`,
       },
     });
 

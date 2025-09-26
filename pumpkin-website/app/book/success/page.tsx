@@ -1,7 +1,32 @@
-import Link from "next/link";
+"use client";
 
-export default function SuccessPage() {
+import Link from "next/link";
+import Script from "next/script";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+
+function SuccessContent() {
+  const searchParams = useSearchParams();
+  const amount = searchParams.get("amount");
+  const paymentIntent = searchParams.get("payment_intent");
+
   return (
+    <>
+      {/* Google Ads Conversion Tracking - Page Load */}
+      <Script
+        id="google-ads-conversion"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            gtag('event', 'conversion', {
+              'send_to': 'AW-16945192161/uOlbCPbIor0aEOG5jJA_',
+              'value': ${amount ? parseFloat(amount) : 0},
+              'currency': 'USD',
+              'transaction_id': '${paymentIntent || ''}'
+            });
+          `,
+        }}
+      />
     <div className="min-h-screen bg-gradient-to-b from-cream to-background flex items-center justify-center px-6">
       <div className="bg-white rounded-lg p-12 shadow-2xl max-w-2xl text-center">
         <div className="mb-8">
@@ -73,5 +98,21 @@ export default function SuccessPage() {
         </div>
       </div>
     </div>
+    </>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-b from-cream to-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-autumn-orange mx-auto"></div>
+          <p className="mt-4 text-autumn-red">Loading...</p>
+        </div>
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
   );
 }
