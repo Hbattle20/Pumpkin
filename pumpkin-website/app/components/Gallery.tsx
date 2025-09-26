@@ -7,12 +7,12 @@ export default function Gallery() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    { src: "/gallery1.jpg", alt: "Pumpkin Display 1" },
-    { src: "", alt: "Pumpkin Display 2", placeholder: true },
-    { src: "", alt: "Pumpkin Display 3", placeholder: true },
-    { src: "", alt: "Pumpkin Display 4", placeholder: true },
-    { src: "", alt: "Pumpkin Display 5", placeholder: true },
-    { src: "", alt: "Pumpkin Display 6", placeholder: true },
+    { src: "/gallery1.jpg", alt: "Front Porch Pumpkin Display" },
+    { src: "/gallery2.jpg", alt: "Walkway Pumpkin Display" },
+    { src: "/gallery3.jpg", alt: "Pumpkin Display" },
+    // { src: "", alt: "Pumpkin Display 4", placeholder: true },
+    // { src: "", alt: "Pumpkin Display 5", placeholder: true },
+    // { src: "", alt: "Pumpkin Display 6", placeholder: true },
   ];
 
   const nextImage = () => {
@@ -28,18 +28,14 @@ export default function Gallery() {
       {/* Main Image Display */}
       <div className="relative mb-6 max-w-4xl mx-auto">
         <div className="aspect-[16/10] bg-gradient-to-br from-autumn-orange/20 to-autumn-gold/20 rounded-lg flex items-center justify-center text-foreground/50 text-2xl overflow-hidden">
-          {images[currentImage].placeholder ? (
-            <span>{images[currentImage].alt}</span>
-          ) : (
-            <Image
-              src={images[currentImage].src}
-              alt={images[currentImage].alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
-              priority={currentImage === 0}
-            />
-          )}
+          <Image
+            src={images[currentImage].src}
+            alt={images[currentImage].alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
+            priority={currentImage === 0}
+          />
         </div>
 
         {/* Navigation Arrows */}
@@ -64,28 +60,24 @@ export default function Gallery() {
       </div>
 
       {/* Thumbnail Navigation */}
-      <div className="grid grid-cols-6 gap-2 md:gap-4">
+      <div className="flex justify-center gap-2 md:gap-4">
         {images.map((image, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`aspect-square bg-gradient-to-br from-autumn-orange/20 to-autumn-gold/20 rounded-lg flex items-center justify-center text-foreground/50 text-xs md:text-sm transition-all overflow-hidden relative ${
+            className={`w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-autumn-orange/20 to-autumn-gold/20 rounded-lg flex items-center justify-center text-foreground/50 text-xs md:text-sm transition-all overflow-hidden relative ${
               currentImage === index
                 ? "ring-2 ring-autumn-orange shadow-lg scale-105"
                 : "hover:scale-105 hover:shadow-md"
             }`}
           >
-            {image.placeholder ? (
-              <span className="p-2 text-center">{image.alt}</span>
-            ) : (
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 80px, 120px"
-              />
-            )}
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 96px, 128px"
+            />
           </button>
         ))}
       </div>

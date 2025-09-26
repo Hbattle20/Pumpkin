@@ -1,5 +1,4 @@
 import Gallery from "./components/Gallery";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,25 +7,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-cream to-background">
         <div className="text-center px-6 w-full max-w-6xl">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl ring-4 ring-autumn-orange/30">
-              <Image
-                src="/jamieson.jpg"
-                alt="Jamieson"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-autumn-red mb-4">
-                Pumpkins By Jamie
-              </h1>
-              <p className="text-xl md:text-2xl text-foreground/80">
-                Elegant porch displays for the autumn season
-              </p>
-            </div>
-          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-autumn-red mb-4">
+            Pumpkins By Jamie
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground/80 mb-8">
+            Elegant porch displays for the autumn season
+          </p>
           <a
             href="#packages"
             className="inline-block bg-autumn-orange text-white px-8 py-4 rounded-lg text-lg hover:bg-autumn-red transition-colors duration-300 mt-4"
@@ -54,10 +40,10 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
-              { id: "pkg1", name: "Package #1", price: "$1500", features: ["2 Grand Prize Pumpkins", "10 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "16 Specialty Pumpkins", "Mini Orange Pumpkins", "Mini White Pumpkins", "3 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
+              { id: "pkg1", name: "Package #1", price: "$1400", features: ["2 Grand Prize Pumpkins", "10 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "16 Specialty Pumpkins", "Mini Orange Pumpkins", "Mini White Pumpkins", "3 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
               { id: "pkg2", name: "Package #2", price: "$850", features: ["8 Large Jack O'Lanterns", "8 Medium Jack O'Lanterns", "8 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "14 Specialty Pumpkins", "2 Hay Bales", "Ornamental Gourds", "Design and Setup Included"] },
               { id: "pkg3", name: "Package #3 (DIY)", price: "$550", features: ["6 Large Jack O'Lanterns", "6 Medium Jack O'Lanterns", "6 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "8 Specialty Pumpkins", "2 Hay Bales", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
-              { id: "pkg4", name: "Package #4 (DIY)", price: "$350", features: ["4 Large Jack O'Lanterns", "4 Medium Jack O'Lanterns", "4 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "6 Specialty Pumpkins", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
+              { id: "pkg4", name: "Package #4 (DIY)", price: "$400", features: ["4 Large Jack O'Lanterns", "4 Medium Jack O'Lanterns", "4 White Ghost Pumpkins", "Assortment of Pie Pumpkins", "6 Specialty Pumpkins", "Front Porch Drop Off", "Add Design & Setup for +$75"] },
               { id: "custom", name: "Custom Package", price: "Contact Us", features: ["Choose Your Own Pumpkins", "Select Quantity & Types", "Add Specialty Items", "Include Hay Bales", "Add Corn Stalks", "Choose Gourds & Decorations", "Design Service Available", "Tailored to Your Budget", "Perfect for Any Display Size"], custom: true },
             ].map((pkg, index) => (
               <div
@@ -93,12 +79,20 @@ export default function Home() {
           <p className="text-xl mb-8">
             Pumpkins Worth Falling For
           </p>
-          <a
-            href="mailto:jamie@pumpkinsbyjamie.com"
-            className="inline-block bg-white text-autumn-red px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cream transition-colors duration-300"
-          >
-            Email Us: jamie@pumpkinsbyjamie.com
-          </a>
+          <div className="space-y-4">
+            <a
+              href="mailto:jamie@pumpkinsbyjamie.com"
+              className="block bg-white text-autumn-red px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cream transition-colors duration-300"
+            >
+              Email: jamie@pumpkinsbyjamie.com
+            </a>
+            <a
+              href="tel:2063056859"
+              className="block bg-white text-autumn-red px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cream transition-colors duration-300"
+            >
+              Call: (206) 305-6859
+            </a>
+          </div>
         </div>
       </section>
 

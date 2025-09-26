@@ -5,23 +5,22 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 
 const packages = [
-  { id: "pkg1", name: "Package #1", price: 1500 },
+  { id: "pkg1", name: "Package #1", price: 1400 },
   { id: "pkg2", name: "Package #2", price: 850 },
   { id: "pkg3", name: "Package #3 (DIY)", price: 550 },
-  { id: "pkg4", name: "Package #4 (DIY)", price: 350 },
+  { id: "pkg4", name: "Package #4 (DIY)", price: 400 },
   { id: "custom", name: "Custom Package", price: 0 },
 ];
 
 const addOns = [
-  { id: "giant", name: "Extra Giant Pumpkin", price: 75 },
-  { id: "haybale", name: "Extra Hay Bale", price: 35 },
-  { id: "design3", name: "Design & Setup (for Package #3)", price: 75 },
-  { id: "design4", name: "Design & Setup (for Package #4)", price: 75 },
+  { id: "giant", name: "Giant Pumpkin", price: 185 },
+  { id: "haybale", name: "Hay Bale", price: 35 },
+  { id: "design", name: "Design & Setup (for DIY Packages)", price: 75 },
 ];
 
 const removalOptions = [
-  { id: "before", name: "Week before Thanksgiving", price: 50 },
-  { id: "after", name: "Week after Thanksgiving", price: 50 },
+  { id: "before", name: "Week before Thanksgiving", price: 125 },
+  { id: "after", name: "Week after Thanksgiving", price: 125 },
 ];
 
 function BookingForm() {
@@ -59,7 +58,7 @@ function BookingForm() {
       const addon = addOns.find((a) => a.id === id);
       return total + (addon?.price || 0);
     }, 0);
-    const removalPrice = selectedRemoval ? 50 : 0;
+    const removalPrice = selectedRemoval ? 125 : 0;
     return packagePrice + addOnsPrice + removalPrice;
   };
 
@@ -309,7 +308,7 @@ function BookingForm() {
               {selectedRemoval && (
                 <div className="flex justify-between text-sm">
                   <span>Removal: {removalOptions.find((r) => r.id === selectedRemoval)?.name}</span>
-                  <span>+$50</span>
+                  <span>+$125</span>
                 </div>
               )}
             </div>

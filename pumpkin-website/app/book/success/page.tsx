@@ -48,12 +48,19 @@ export default function SuccessPage() {
 
         <div className="space-y-4">
           <p className="text-gray-600">
-            Questions? Email us at{" "}
+            Questions? Contact us at{" "}
             <a
               href="mailto:jamie@pumpkinsbyjamie.com"
               className="text-autumn-orange hover:text-autumn-red transition-colors"
             >
               jamie@pumpkinsbyjamie.com
+            </a>
+            {" "}or call{" "}
+            <a
+              href="tel:2063056859"
+              className="text-autumn-orange hover:text-autumn-red transition-colors"
+            >
+              (206) 305-6859
             </a>
           </p>
 
