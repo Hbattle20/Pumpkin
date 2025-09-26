@@ -7,7 +7,7 @@ export default function Gallery() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    { src: "/gallery3.jpg", alt: "Pumpkin Display" },
+    { src: "/gallery3.PNG", alt: "Pumpkin Display" },
     { src: "/gallery1.jpg", alt: "Front Porch Pumpkin Display" },
     { src: "/gallery2.jpg", alt: "Walkway Pumpkin Display" },
     // { src: "", alt: "Pumpkin Display 4", placeholder: true },
