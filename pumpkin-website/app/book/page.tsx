@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 
 const packages = [
+  { id: "test", name: "TEST - $1 Package", price: 1 },  // TEMPORARY FOR TESTING
   { id: "pkg1", name: "Package #1", price: 1400 },
   { id: "pkg2", name: "Package #2", price: 850 },
   { id: "pkg3", name: "Package #3 (DIY)", price: 550 },
