@@ -27,6 +27,23 @@ function SuccessContent() {
           `,
         }}
       />
+
+      {/* Pinterest Conversion Tracking - Checkout Event */}
+      <Script
+        id="pinterest-conversion"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof pintrk !== 'undefined') {
+              pintrk('track', 'checkout', {
+                value: ${amount ? parseFloat(amount) : 0},
+                currency: 'USD',
+                order_id: '${paymentIntent || ''}'
+              });
+            }
+          `,
+        }}
+      />
     <div className="min-h-screen bg-gradient-to-b from-cream to-background flex items-center justify-center px-6">
       <div className="bg-white rounded-lg p-12 shadow-2xl max-w-2xl text-center">
         <div className="mb-8">

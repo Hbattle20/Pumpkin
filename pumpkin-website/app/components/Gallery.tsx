@@ -10,7 +10,7 @@ export default function Gallery() {
     { src: "/gallery3.PNG", alt: "Pumpkin Display" },
     { src: "/gallery1.jpg", alt: "Front Porch Pumpkin Display" },
     { src: "/gallery2.jpg", alt: "Walkway Pumpkin Display" },
-    // { src: "", alt: "Pumpkin Display 4", placeholder: true },
+    { src: "/gallery4.jpg", alt: "Pumpkin Display" },
     // { src: "", alt: "Pumpkin Display 5", placeholder: true },
     // { src: "", alt: "Pumpkin Display 6", placeholder: true },
   ];
